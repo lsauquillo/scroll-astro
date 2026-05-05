@@ -1,17 +1,24 @@
 ---
-import OnePageScroll from "./OnePageScroll.vue";
-
 const {
-  title = "Bienvenido",
-  subtitle = "Mi proyecto con Astro + Vue",
-  description = "Esta es una landing de una sola página con scroll suave entre secciones.", 
+  title = "Home",
+  subtitle = "Subtítulo",
+  description = "Descripción",
+  image = "/images/unsplash_1.jpg",
 } = Astro.props;
 ---
 
-<OnePageScroll client:load
-  id={Astro.props.id}
-  title={title}
-  subtitle={subtitle}
-  description={description}
-  image={Astro.props.image}
+<section id="home" class="flex min-h-screen items-center justify-center px-6 pt-24">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+    <div>
+      <h1 class="text-5xl font-bold">{title}</h1>
+      <h2 class="mt-4 text-2xl font-semibold text-slate-300">{subtitle}</h2>
+      <p class="mt-6 text-lg text-slate-400">{description}</p>
+    </div>
+
+   <img
+  src={image}
+  alt="Imagen principal"
+  class="w-full max-w-md rounded-2xl shadow-xl"
 />
+  </div>
+</section>

@@ -1,15 +1,40 @@
 ---
+// src/pages/index.astro
 import "../styles/global.css";
-import Home from "../components/Home.astro";
 import OnePageScroll from "../components/OnePageScroll.vue";
+import Home from "../components/Home.astro";
 ---
 
 <html lang="es">
-   <head>
+  <head>
     <meta charset="UTF-8" />
-    <title>Astro + Vue + Tailwind</title>
+    <title>Mi web</title>
   </head>
-  <body>
+
+  <body class="bg-slate-950 text-white">
     <OnePageScroll client:load />
+
+    <main>
+     <Home
+  title="Home"
+  subtitle="Landing con Astro"
+  description="Esta es la sección principal."
+  image="/images/unsplash_1.jpg"
+/>
+
+      <section
+        id="pagina-1"
+        class="flex min-h-screen items-center justify-center bg-slate-900 pt-24"
+      >
+        <h2 class="text-5xl font-bold">Página 1</h2>
+      </section>
+
+      <section
+        id="pagina-2"
+        class="flex min-h-screen items-center justify-center bg-slate-800 pt-24"
+      >
+        <h2 class="text-5xl font-bold">Página 2</h2>
+      </section>
+    </main>
   </body>
 </html>
